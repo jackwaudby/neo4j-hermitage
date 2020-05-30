@@ -6,9 +6,10 @@ then
 elif [ -n $1 ]
 then
     mvn compile
-    mvn exec:java -Dexec.mainClass=TestDriver  -Dexec.cleanupDaemonThreads=false -Dexec.args=$1
+    mvn exec:java -Dexec.mainClass=TestDriver  -Dexec.cleanupDaemonThreads=false -Dexec.args="$1 $2"
 fi
 
+# TODO
 # pmp-write
 # g-single-dependencies
 # g-single-write-1

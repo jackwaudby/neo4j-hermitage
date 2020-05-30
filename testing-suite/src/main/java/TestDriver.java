@@ -31,10 +31,8 @@ public class TestDriver {
 
     public static void main(String[] args) {
 
-//        String test = args[0];
-//        int delay = args[1]
-        String test = "g2";
-        int delay = 5000;
+        String test = args[0];
+        int delay = Integer.parseInt(args[1]);
 
         String neo4jHome = System.getenv("NEO4J_HOME");
         DatabaseManagementService managementService = new DatabaseManagementServiceBuilder(new File(neo4jHome)).build();
@@ -65,7 +63,6 @@ public class TestDriver {
             tx.commit();
         }
 
-        // TODO: print initial set check nodes
         System.out.println("# Count nodes");
         System.out.println("> MATCH (n) RETURN COUNT(n)");
         long count;
@@ -76,6 +73,7 @@ public class TestDriver {
         }
         System.out.println("> Count: " + count);
 
+        System.out.println(" ");
         System.out.println("# " + test + " test");
 
         if (test.equals("g0")) {
