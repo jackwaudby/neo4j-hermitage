@@ -1,0 +1,3 @@
+testing-suite/target/*
+testing-suite/.idea/*
+*.iml
